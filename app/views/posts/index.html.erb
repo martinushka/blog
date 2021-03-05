@@ -1,7 +1,7 @@
 <h1>Все наши посты</h1>
 <hr>
 <% @post.each do |post|%>
-	<div class="well">
+	<div class="here show post">
 		<h3> <%= post.title %> </h3>
 		<p> <%= post.body %> </p>
 		<%= link_to 'Читать далее', post_path(post), :class => 'btn btn-outline-primary' %>
