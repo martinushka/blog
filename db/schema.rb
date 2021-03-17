@@ -12,10 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2021_03_08_062552) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.string "username"
     t.text "body"
-    t.integer "post_id"
+    t.bigint "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
